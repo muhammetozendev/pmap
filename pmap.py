@@ -138,7 +138,6 @@ except NameError:
     print("There is no port spesification!")
     exit()
 
-### SO FAR SO GOOD ###
 
 class Open:
     def __init__(self):
