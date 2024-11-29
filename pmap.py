@@ -18,9 +18,9 @@ parser.add_argument("-p","--ports",action="store", default=None, help="Specify c
 parser.add_argument("-c","--count",action="store", default=None, help="Upper limit for concurrent threads of execution")
 parsed = parser.parse_args()
 
-TOP = parsed.__getattribute__("top")
+TOP = parsed.top
 hosts = []
-host_arg = parsed.__getattribute__("host")[0]
+host_arg = parsed.host[0]
 
 while True:
     try:
@@ -67,8 +67,8 @@ while True:
             exit()
 
 
-scan_ports = parsed.__getattribute__("ports")
-thread_count = parsed.__getattribute__("count")
+scan_ports = parsed.ports
+thread_count = parsed.count
 
 def format_array(arr):
     result = []
@@ -150,6 +150,7 @@ class Host:
     def __init__(self):
         self.ip = ""
         self.open = Open()
+        self.domain = ""
 
 def scan_port(port, obj: Open, host):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
