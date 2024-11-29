@@ -95,6 +95,8 @@ if TOP != None and scan_ports != None:
     print("Top ports and regular port spesifications cannot be used together!")
     exit()
 
+scan = None
+
 if TOP:
     scan = PORTS[:int(TOP)]
 
@@ -135,7 +137,7 @@ try:
     if scan:
         pass
 except NameError:
-    print("There is no port spesification!")
+    print("There is no port specification!")
     exit()
 
 
